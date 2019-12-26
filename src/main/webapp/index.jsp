@@ -10,14 +10,14 @@
 <html lang="en">
 <head>
     <jsp:include page="/WEB-INF/fragments/header.jsp"/>
-    <title>Dependency-Track</title>
+    <title>AppThreat</title>
 </head>
 <body data-sidebar="dashboard">
 <jsp:include page="/WEB-INF/fragments/navbar.jsp"/>
 <div id="content-container" class="container-fluid require-view-portfolio">
     <div class="content-row main">
         <div class="col-sm-12 col-md-12">
-            <h3>Dashboard</h3>
+            <h3>AppThreat Dashboard</h3>
             <div class="widget-row">
                 <!-- Left Column -->
                 <div class="col-lg-8">
@@ -40,6 +40,18 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div id="projectchart" style="height:200px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Component Chart-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel widget">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div id="componentchart" style="height:200px"></div>
                                     </div>
                                 </div>
                             </div>
@@ -68,19 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Component Chart-->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel widget">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div id="componentchart" style="height:200px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
                 <!-- Right Column -->
                 <div class="col-lg-4">

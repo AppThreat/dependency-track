@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
     <jsp:include page="/WEB-INF/fragments/header.jsp"/>
-    <title>Dependency-Track - Administration</title>
+    <title>AppThreat - Administration</title>
 </head>
 <body data-sidebar="admin">
 <jsp:include page="/WEB-INF/fragments/navbar.jsp"/>
@@ -139,9 +139,9 @@
                         </div>
                         <div class="tab-pane admin-form-content" id="generalConfigTab" data-admin-title="General">
                             <h3 class="admin-section-title">General Configuration</h3>
-                            <p>This URL is used to construct links back to Dependency-Track from external systems.</p>
+                            <p>This URL is used to construct links back to AppThreat from external systems.</p>
                             <div class="form-group">
-                                <label class="required" for="generalConfigBaseUrlInput">Dependency-Track Base URL</label>
+                                <label class="required" for="generalConfigBaseUrlInput">AppThreat Base URL</label>
                                 <input type="text" name="Base URL" class="form-control required" id="generalConfigBaseUrlInput" data-group-name="general" data-property-name="base.url">
                             </div>
                             <div class="checkbox">
@@ -242,7 +242,7 @@
                                 <div class="panel-body">
                                     <p>
                                         NPM Audit is a cloud service which identifies vulnerabilities in Node.js
-                                        Modules. Dependency-Track integrates natively with the NPM Audit service to
+                                        Modules. AppThreat integrates natively with the NPM Audit service to
                                         provide highly accurate results.
                                     </p>
                                     <p>
@@ -275,7 +275,7 @@
                                 <div class="panel-body">
                                     <p>
                                         OSS Index is a service provided by Sonatype which identifies vulnerabilities in
-                                        third-party components. Dependency-Track integrates natively with the OSS Index
+                                        third-party components. AppThreat integrates natively with the OSS Index
                                         service to provide highly accurate results.
                                     </p>
                                     <p>
@@ -308,7 +308,7 @@
                                 <div class="panel-body">
                                     <p>
                                         VulnDB is a commercial service from Risk Based Security which identifies
-                                        vulnerabilities in third-party components. Dependency-Track integrates natively
+                                        vulnerabilities in third-party components. AppThreat integrates natively
                                         with the VulnDB service to provide highly accurate results.
                                     </p>
                                     <p>
@@ -463,7 +463,7 @@
                             <div class="form-group">
                                 <label class="required" for="integrationsSscSyncCadenceInput">Synchronization Cadence (in minutes)</label>
                                 <input type="number" min="10" max="99999" name="Base URL" class="form-control required" id="integrationsSscSyncCadenceInput" data-group-name="integrations" data-property-name="fortify.ssc.sync.cadence">
-                                <br/>Restarting Dependency-Track is required for cadence changes to take effect
+                                <br/>Restarting AppThreat is required for cadence changes to take effect
                             </div>
                             <div class="form-group">
                                 <label class="required" for="integrationsSscBaseUrlInput">Fortify SSC URL</label>
@@ -487,7 +487,7 @@
                             <div class="form-group">
                                 <label class="required" for="integrationsKennaSecuritySyncCadenceInput">Synchronization Cadence (in minutes)</label>
                                 <input type="number" min="10" max="99999" name="Base URL" class="form-control required" id="integrationsKennaSecuritySyncCadenceInput" data-group-name="integrations" data-property-name="kenna.sync.cadence">
-                                <br/>Restarting Dependency-Track is required for cadence changes to take effect
+                                <br/>Restarting AppThreat is required for cadence changes to take effect
                             </div>
                             <div class="form-group">
                                 <label class="required" for="integrationsKennaSecurityConnectorIdInput">Connector ID</label>
@@ -501,8 +501,8 @@
                         </div>
                         <div class="tab-pane admin-form-content" id="integrationsThreadFixTab" data-admin-title="Integrations">
                             <h3 class="admin-section-title">ThreadFix Configuration</h3>
-                            <p>Support for Dependency-Track is included with ThreadFix. To configure ThreadFix
-                               integration, refer to the official ThreadFix documentation or the Dependency-Track
+                            <p>Support for AppThreat is included with ThreadFix. To configure ThreadFix
+                               integration, refer to the official ThreadFix documentation or the AppThreat
                                documentation on configuring <a href="https://docs.dependencytrack.org/integrations/threadfix/">ThreadFix integration</a>.
                             </p>
                         </div>

@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    This version of Dependency-Track is a snapshot release that is dynamically
+                    This version of AppThreat is a snapshot release that is dynamically
                     generated from continuous integration or from manually compiling from a branch.
                     It is likely beta-quality software and has not undergone extensive testing.
                     It may contain defects and incomplete features and functionality.
@@ -18,8 +18,8 @@
                 </p>
                 <p>
                     Please consider contributing feedback and pull requests to help improve
-                    Dependency-Track. All contributions are appreciated.
-                    <a href="https://github.com/DependencyTrack/dependency-track">https://github.com/DependencyTrack/dependency-track</a>
+                    AppThreat. All contributions are appreciated.
+                    <a href="https://github.com/AppThreat/dependency-track">https://github.com/AppThreat/dependency-track</a>
                 </p>
                 <p><strong>Do not use snapshot releases on production data.</strong></p>
             </div>
@@ -40,10 +40,10 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <a href="https://dependencytrack.org/">
-                            <img src="<c:url value="/images/dt.svg"/>" alt="Dependency-Track logo" style="width:200px; margin-bottom:20px">
+                            <img src="<c:url value="/images/appthreat-logo.png"/>" alt="AppThreat logo" style="width:200px; margin-bottom:20px">
                         </a>
                         <p>
-                            Dependency-Track is an intelligent software supply-chain component analysis platform
+                            AppThreat is an intelligent software supply-chain component analysis platform
                             that allows organizations to identify and reduce risk from the use of third-party
                             and open source components.
                         </p>
@@ -114,7 +114,7 @@
         <div class="modal-dialog vertical-align-center">
             <div class="modal-content login-modal-content">
                 <div class="modal-header login-modal-header login-header">
-                    <img src="<c:url value="/images/dt.svg"/>" alt="Dependency-Track logo" style="width:200px"/>
+                    <img src="<c:url value="/images/dt.svg"/>" alt="AppThreat logo" style="width:200px"/>
                 </div>
                 <div class="modal-body login-modal-body">
                     <form id="login-form" role="form" action="" method="post" class="login-form" autocomplete="off">
@@ -139,7 +139,7 @@
         <div class="modal-dialog vertical-align-center">
             <div class="modal-content login-modal-content">
                 <div class="modal-header login-modal-header login-header">
-                    <img src="<c:url value="/images/dt.svg"/>" alt="Dependency-Track logo" style="width:200px"/>
+                    <img src="<c:url value="/images/dt.svg"/>" alt="AppThreat logo" style="width:200px"/>
                 </div>
                 <div class="modal-body login-modal-body">
                     <form id="forcePasswordChange-form" role="form" action="" method="post" class="login-form" autocomplete="off">

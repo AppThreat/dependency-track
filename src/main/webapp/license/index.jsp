@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="/WEB-INF/fragments/header.jsp"/>
-    <title>Dependency-Track - License</title>
+    <title>AppThreat - License</title>
 </head>
 <body data-sidebar="licenses">
 <jsp:include page="/WEB-INF/fragments/navbar.jsp"/>

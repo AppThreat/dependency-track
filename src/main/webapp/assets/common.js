@@ -145,10 +145,12 @@ $common.initialize = function initialize() {
             }
 
             // SNAPSHOT release notification
+            /*
             if (data.version.includes("SNAPSHOT") && !$.sessionStorage.isSet("snapshot")) {
                 $("#modal-snapshotNotification").modal();
                 $.sessionStorage.set("snapshot", "true");
             }
+            */
         }
     );
     $common.unloadSpinner();

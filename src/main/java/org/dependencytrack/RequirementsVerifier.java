@@ -54,11 +54,11 @@ public class RequirementsVerifier implements ServletContextListener {
             LOGGER.error(message);
             throw new RequirementsException(message);
         }
-        if (Runtime.getRuntime().maxMemory()/1024/1024 <= 3584) {
+        if (Runtime.getRuntime().maxMemory()/1024/1024 <= 1584) {
             setFailedValidation(true);
             // too complicated to calculate (Eden, Survivor, Tenured) and different type names between Java versions.
-            // Therefore, safely assume anything above 3.5GB available max memory is likely to be 4GB or higher.
-            final String message = "Dependency-Track requires a minimum of 4GB RAM (heap). Cannot continue. To fix, specify -Xmx4G (or higher) when executing Java.";
+            // Therefore, safely assume anything above 1.5GB available max memory is likely to be 2GB or higher.
+            final String message = "Dependency-Track requires a minimum of 2GB RAM (heap). Cannot continue. To fix, specify -Xmx2G (or higher) when executing Java.";
             LOGGER.error(message);
             throw new RequirementsException(message);
         }

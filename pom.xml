@@ -335,6 +335,11 @@
                     </fileSets>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.cyclonedx</groupId>
+                <artifactId>cyclonedx-maven-plugin</artifactId>
+                <version>1.5.1</version>
+            </plugin>
         </plugins>
     </build>
 
