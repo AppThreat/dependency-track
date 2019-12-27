@@ -5,9 +5,6 @@ build:
     sha256: {}
   artifacts:
   - image: gcr.io/glassy-courage-253518/dependency-track
-  local:
-    useDockerCLI: true
-    useBuildkit: true
 deploy:
   helm:
     releases:
