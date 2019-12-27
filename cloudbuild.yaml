@@ -9,6 +9,4 @@ steps:
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=eu-west2-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=dtrack-prod-cluster'
-    - 'TILLERLESS=true'
-    - 'TILLER_NAMESPACE=test'
 images: ['gcr.io/$PROJECT_ID/dependency-track']
