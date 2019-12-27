@@ -5,7 +5,6 @@
 replicaCount: 1
 
 image:
-  registry: localhost
   repository: appthreat/dependency-track
   pullPolicy: IfNotPresent
 

@@ -24,3 +24,5 @@ keywords:
 - dependency-track
 - owasp
 - appthreat
+
+atomic: true

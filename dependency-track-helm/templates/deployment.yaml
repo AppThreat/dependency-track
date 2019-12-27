@@ -29,7 +29,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: ALPINE_DATABASE_MODE
-            value: "internal"
+            value: "embedded"
           - name: ALPINE_CORS_ENABLED
             value: "true"
           - name: ALPINE_CORS_ALLOW_ORIGIN
