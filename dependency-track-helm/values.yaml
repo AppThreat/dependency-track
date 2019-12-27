@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: appthreat/dependency-track
+  repository: gcr.io/glassy-courage-253518/dependency-track
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

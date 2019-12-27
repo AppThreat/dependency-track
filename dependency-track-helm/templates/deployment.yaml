@@ -29,7 +29,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: ALPINE_DATABASE_MODE
-            value: "embedded"
+            value: "server"
+          - name: ALPINE_DATABASE_DRIVER
+            value: "com.mysql.jdbc.Driver"
+          - name: ALPINE_DATABASE_DRIVER_PATH
+            value: "/extlib/mysql-connector-java-5.1.47.jar"
+          - name: ALPINE_DATABASE_URL
+            value: "jdbc:mysql://10.37.224.3:3306/dtrace-master"
+          - name: ALPINE_DATABASE_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: cloudsql-db-credentials
+                key: username
+          - name: ALPINE_DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: cloudsql-db-credentials
+                key: password
           - name: ALPINE_CORS_ENABLED
             value: "true"
           - name: ALPINE_CORS_ALLOW_ORIGIN

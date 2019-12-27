@@ -1,0 +1,7 @@
+steps:
+- name: maven:3.6-jdk-8-slim
+  entrypoint: 'mvn'
+  args: ['package', '-Dmaven.test.skip=true', '-P', 'embedded-jetty', '-Dlogback.configuration.file=src/main/docker/logback.xml']
+- name: docker
+  args: ['build', '-f', 'src/main/docker/Dockerfile', '-t', 'gcr.io/$PROJECT_ID/dependency-track', '-t', 'gcr.io/$PROJECT_ID/dependency-track:latest', '.']
+images: ['gcr.io/$PROJECT_ID/dependency-track']

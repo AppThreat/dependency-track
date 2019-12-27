@@ -4,7 +4,7 @@ build:
   tagPolicy:
     sha256: {}
   artifacts:
-  - image: gcr.io/appthreat/dependency-track
+  - image: gcr.io/glassy-courage-253518/dependency-track
   local:
     useDockerCLI: true
     useBuildkit: true
@@ -17,4 +17,4 @@ deploy:
       #valuesFiles:
       #- helm-skaffold-values.yaml
       values:
-        image: gcr.io/appthreat/dependency-track
+        image: gcr.io/glassy-courage-253518/dependency-track
