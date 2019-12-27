@@ -5,7 +5,7 @@ steps:
 - name: docker
   args: ['build', '-f', 'src/main/docker/Dockerfile', '-t', 'gcr.io/$PROJECT_ID/dependency-track', '-t', 'gcr.io/$PROJECT_ID/dependency-track:latest', '.']
 - name: 'gcr.io/$PROJECT_ID/helm'
-  args: ['upgrade', '--install', 'dependency-track', '--namespace', 'dtrack', 'dependency-track-helm']
+  args: ['upgrade', '--install', 'dependency-track', 'dependency-track-helm']
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=eu-west2-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=dtrack-prod-cluster'
