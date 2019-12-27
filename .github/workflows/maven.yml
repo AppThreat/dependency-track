@@ -8,10 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:
-        # Need to figure out a way to prevent duplicate pushes to Docker Hub. Should only be done with one.
-        #java: [ '1.8.0', '11.0.x' ]
-        java: [ '1.8.0' ]
+      matrix:        
+        java: [ '1.8.0', '11.0.x' ]
     env:
       DOCKER_REPO: owasp/dependency-track
       DOCKER_TAG: snapshot
@@ -20,37 +18,16 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: ${{ matrix.java }}
-    - name: Install tools
-      run: |
-        sudo apt-get install jq
-        wget -O ~/codacy-coverage-reporter-assembly.jar https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.5/codacy-coverage-reporter-4.0.5-assembly.jar
-        export DOCKLE_VERSION=$(curl --silent "https://api.github.com/repos/goodwithtech/dockle/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-        wget -O ~/dockle.tar.gz https://github.com/goodwithtech/dockle/releases/download/v${DOCKLE_VERSION}/dockle_${DOCKLE_VERSION}_Linux-64bit.tar.gz
-        tar zxvf ~/dockle.tar.gz -C ~/
-        export TRIVY_VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-        wget -O ~/trivy.tar.gz https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz
-        tar zxvf ~/trivy.tar.gz -C ~/
+        java-version: ${{ matrix.java }}    
     - name: Build with Maven
       run: |
         mvn clean package
-        mvn package -Dmaven.test.skip=true -P embedded-jetty -Dlogback.configuration.file=src/main/docker/logback.xml
-    - name: Publish test coverage
-      env:
-        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
-      run: java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r target/jacoco-ut/jacoco.xml
-    - name: Building Docker container
-      run: |
-        docker build -f src/main/docker/Dockerfile -t $DOCKER_REPO:$DOCKER_TAG .
-    - name: Publishing container to Docker Hub
-      env:
-        HUB_USERNAME: ${{ secrets.HUB_USERNAME }}
-        HUB_ACCESSS_TOKEN: ${{ secrets.HUB_ACCESSS_TOKEN }}
-      run: |
-        docker login -u "$HUB_USERNAME" -p "$HUB_ACCESSS_TOKEN";
-        docker push $DOCKER_REPO:$DOCKER_TAG;
-    - name: Analyzing Docker container
-      run: |
-        ~/dockle $DOCKER_REPO:$DOCKER_TAG
-        ~/trivy --exit-code 0 --quiet --auto-refresh $DOCKER_REPO:$DOCKER_TAG
-        # ~/trivy --exit-code 1 --severity CRITICAL --quiet --auto-refresh $DOCKER_REPO:$DOCKER_TAG
+        mvn package -Dmaven.test.skip=true -P embedded-jetty -Dlogback.configuration.file=src/main/docker/logback.xml    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: dependency-track.war
+        # Directory containing files to upload
+        path: target/dependency-track.war
+  
