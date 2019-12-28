@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: gcr.io/glassy-courage-253518/dependency-track
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
