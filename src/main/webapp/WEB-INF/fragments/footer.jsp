@@ -1,8 +1,7 @@
 <%@page import="alpine.Config" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%!
-    private static final String BUILD_ID = Config.getInstance().getApplicationBuildUuid();
-    private static final String VERSION_PARAM = "?v=" + BUILD_ID;
+    private static final String VERSION_PARAM = "";
 %>
 <script type="text/javascript" src="<c:url value="/assets/jquery/jquery-3.4.1.min.js"/><%=VERSION_PARAM%>"></script>
 <script type="text/javascript" src="<c:url value="/assets/jquery/jquery.storageapi.min.js"/><%=VERSION_PARAM%>"></script>

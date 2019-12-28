@@ -16,7 +16,7 @@
             </button>
             <div>
                 <a href="<c:url value="/"/>">
-                    <img src="<c:url value="/images/appthreat-logo.png"/>" alt="" style="height:44px; margin-top:3px;"/>
+                    <img src="<c:url value="/images/appthreat-logo-full.png"/>" alt="" style="height:42px; background-color: #fff; padding-right: 10px;"/>
                 </a>
             </div>
         </div>

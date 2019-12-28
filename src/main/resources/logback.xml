@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
-    <appender name="CA" class="org.apache.log4j.ConsoleAppender">
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
-        </layout>
-	</appender>
+
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${user.home}/.dependency-track/dependency-track.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
@@ -58,20 +54,22 @@
     </appender>
 
     <logger name="alpine" level="${dependencyTrack.logging.level:-INFO}" additivity="false">
-        <appender-ref ref="CA" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="SECURITY_CONSOLE" />
     </logger>
 
     <logger name="org.dependencytrack" level="${dependencyTrack.logging.level:-INFO}" additivity="false">
-        <appender-ref ref="CA" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="SECURITY_CONSOLE" />
     </logger>
 
     <logger name="org.eclipse.jetty" level="${dependencyTrack.logging.level:-INFO}" additivity="false">
-        <appender-ref ref="CA" />
+        <appender-ref ref="EMBEDDED_SERVER" />
     </logger>
 
-    <root level="ERROR">
-        <appender-ref ref="CA" />
-        <appender-ref ref="CA" />
+    <root level="WARN">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="SECURITY_CONSOLE" />
     </root>
 
 </configuration>

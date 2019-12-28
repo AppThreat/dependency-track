@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:        
+      matrix:
         java: [ '1.8.0', '11.0.x' ]
     env:
       DOCKER_REPO: owasp/dependency-track
@@ -18,16 +18,18 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: ${{ matrix.java }}    
+        java-version: ${{ matrix.java }}
     - name: Build with Maven
       run: |
-        mvn clean package
-        mvn package -Dmaven.test.skip=true -P embedded-jetty -Dlogback.configuration.file=src/main/docker/logback.xml    
+        mvn clean package -Dmaven.test.skip=true -P embedded-jetty -Dlogback.configuration.file=src/main/docker/logback.xml
+    - name: SAST scanning
+      uses: appthreat/sast-scan-action@master
+      with:
+        type: "java"
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: dependency-track.war
+        name: artefacts.zip
         # Directory containing files to upload
-        path: target/dependency-track.war
-  
+        path: target/dependency-track-embedded.war
