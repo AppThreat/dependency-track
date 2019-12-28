@@ -37,7 +37,7 @@ CMD java $JAVA_OPTIONS -DdependencyTrack.logging.level=$LOGGING_LEVEL -jar depen
 EXPOSE 8080
 
 # Dependency-Track's default logging level
-ENV LOGGING_LEVEL=INFO
+ENV LOGGING_LEVEL=ERROR
 
 # Environment variables that can be passed at runtime
 ENV JAVA_OPTIONS="-XX:MaxRAMPercentage=90.0"

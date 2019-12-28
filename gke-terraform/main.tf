@@ -5,6 +5,10 @@ provider "google" {
     region      = var.GCP_REGION
 }
 
+resource "google_sql_database" "dtrace-master" {
+  name     = "dtrace-master-db"
+  instance = google_sql_database_instance.cloudsql-db-master.name
+}
 resource "google_sql_database_instance" "cloudsql-db-master" {
   name = var.database_name
   database_version = var.database_version
