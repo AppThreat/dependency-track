@@ -4,9 +4,4 @@ steps:
   args: ['package', '-Dmaven.test.skip=true', '-P', 'embedded-jetty', '-Dlogback.configuration.file=src/main/docker/logback.xml']
 - name: docker
   args: ['build', '-f', 'src/main/docker/Dockerfile', '-t', 'gcr.io/$PROJECT_ID/dependency-track', '-t', 'gcr.io/$PROJECT_ID/dependency-track:3.8.0', '.']
-- name: 'gcr.io/$PROJECT_ID/helm'
-  args: ['upgrade', '--install', 'dependency-track', 'dependency-track-helm']
-  env:
-    - 'CLOUDSDK_COMPUTE_ZONE=eu-west2-a'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=dtrack-prod-cluster'
 images: ['gcr.io/$PROJECT_ID/dependency-track']
