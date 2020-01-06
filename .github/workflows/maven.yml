@@ -29,6 +29,6 @@ jobs:
         uses: actions/upload-artifact@v1.0.0
         with:
           # Artifact name
-          name: dependency-track.war
+          name: dependency-track
           # Directory containing files to upload
-          path: target/dependency-track.war
+          path: target/dependency-track-embedded.war
