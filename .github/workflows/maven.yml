@@ -25,6 +25,14 @@ jobs:
         uses: appthreat/sast-scan-action@master
         with:
           type: "java"
+      - name: debug
+        run: |
+          ls -lh ${HOME}/reports
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: reports
+          path: ${HOME}/reports
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
