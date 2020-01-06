@@ -80,37 +80,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <!-- Right Column -->
                 <div class="col-lg-4">
-                    <!-- Ratios (Progress Bars) -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel widget">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <h4>Vulnerable Project Ratio</h4>
-                                            <div class="progress">
-                                                <div id="vulnerableProjects" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width:2em; width:0">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <h4>Vulnerable Component Ratio</h4>
-                                            <div class="progress">
-                                                <div id="vulnerableComponents" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width:2em; width:0">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- Projects at Risk -->
                     <div class="row">
                         <div class="col-sm-12">
@@ -124,18 +98,6 @@
                                             <div class="huge"><span id="projectsAtRisk"></span></div>
                                             <div>Projects at Risk</div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Vulnerability Database Trend -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel widget">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div id="vulnerabilitychart" style="height:200px"></div>
                                     </div>
                                 </div>
                             </div>
@@ -198,6 +160,19 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Vulnerability Database Trend -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel widget">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div id="vulnerabilitychart" style="height:200px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div> <!-- /widget-row> -->
 

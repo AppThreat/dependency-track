@@ -114,7 +114,7 @@
         <div class="modal-dialog vertical-align-center">
             <div class="modal-content login-modal-content">
                 <div class="modal-header login-modal-header login-header">
-                    <img src="<c:url value="/images/dt.svg"/>" alt="AppThreat logo" style="width:200px"/>
+                    <img src="<c:url value="/images/appthreat-logo-full.png"/>" alt="AppThreat logo" style="width:200px"/>
                 </div>
                 <div class="modal-body login-modal-body">
                     <form id="login-form" role="form" action="" method="post" class="login-form" autocomplete="off">
@@ -139,7 +139,7 @@
         <div class="modal-dialog vertical-align-center">
             <div class="modal-content login-modal-content">
                 <div class="modal-header login-modal-header login-header">
-                    <img src="<c:url value="/images/dt.svg"/>" alt="AppThreat logo" style="width:200px"/>
+                    <img src="<c:url value="/images/appthreat-logo-full.png"/>" alt="AppThreat logo" style="width:200px"/>
                 </div>
                 <div class="modal-body login-modal-body">
                     <form id="forcePasswordChange-form" role="form" action="" method="post" class="login-form" autocomplete="off">

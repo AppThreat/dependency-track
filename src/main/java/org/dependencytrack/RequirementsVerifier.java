@@ -54,6 +54,7 @@ public class RequirementsVerifier implements ServletContextListener {
             LOGGER.error(message);
             throw new RequirementsException(message);
         }
+        /*
         if (Runtime.getRuntime().maxMemory()/1024/1024 <= 1584) {
             setFailedValidation(true);
             // too complicated to calculate (Eden, Survivor, Tenured) and different type names between Java versions.
@@ -68,6 +69,7 @@ public class RequirementsVerifier implements ServletContextListener {
             LOGGER.error(message);
             throw new RequirementsException(message);
         }
+        */
     }
 
     /**

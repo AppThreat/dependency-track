@@ -28,14 +28,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+          - name: TMPDIR
+            value: "/data/tmp"
+          - name: ALPINE_DATA_DIRECTORY
+            value: "/data/dtrack"
           - name: ALPINE_DATABASE_MODE
-            value: "server"
+            value: "external"
           - name: ALPINE_DATABASE_DRIVER
-            value: "com.mysql.jdbc.Driver"
+            value: "org.postgresql.Driver"
           - name: ALPINE_DATABASE_DRIVER_PATH
-            value: "/extlib/mysql-connector-java-5.1.47.jar"
+            value: "/extlib/postgresql-42.2.5.jar"
           - name: ALPINE_DATABASE_URL
-            value: "jdbc:mysql://10.37.224.3:3306/dtrace-master"
+            value: "jdbc:postgresql://10.37.225.3:5432/dtrack"
           - name: ALPINE_DATABASE_USERNAME
             valueFrom:
               secretKeyRef:
@@ -51,7 +55,7 @@ spec:
           - name: ALPINE_CORS_ALLOW_ORIGIN
             value: "deptrack.appthreat.io"
           - name: ALPINE_CORS_ALLOW_METHODS
-            value: "GET POST PUT DELETE OPTIONS"            
+            value: "GET POST PUT DELETE OPTIONS"
           ports:
           - name: http
             containerPort: 8080
@@ -61,7 +65,7 @@ spec:
               path: /api/version
               port: http
             initialDelaySeconds: 60
-            periodSeconds: 30          
+            periodSeconds: 30
           readinessProbe:
             httpGet:
               path: /api/version
@@ -80,7 +84,7 @@ spec:
           claimName: {{ template "dependency-track.fullname" . }}
       {{- else }}
         emptyDir: {}
-      {{- end }}      
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
