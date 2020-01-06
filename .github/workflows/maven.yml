@@ -27,12 +27,12 @@ jobs:
           type: "java"
       - name: debug
         run: |
-          ls -lh ${HOME}/reports
+          ls -lh ${GITHUB_HOME}/reports
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: reports
-          path: ${HOME}/reports
+          path: ${GITHUB_HOME}/reports
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
